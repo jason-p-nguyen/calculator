@@ -39,8 +39,19 @@ function operate(num1, num2, operator) {
         return "ERROR";
     }
 }
+const button1 = document.getElementsByClassName("1");
+//set listener to button "1"
+button1.addEventListener("click", (event) => {
+    return 1;
+})
 
-console.log(operate(4, 9, "add"));
-console.log(operate(4, 9, "subtract"));
-console.log(operate(4, 9, "multiply"));
-console.log(operate(4, 9, "divide"));
+//set num1 to "1"
+//test: output "num1 = 1" on the console log
+//set listener to button "+"
+//set operator to "+"
+//test: output "operator = +" on console log
+//set num2 to "1"
+//test: output "num2 = 1" on console log
+//set listener on "=" button to run operate()
+//test: output results on console log
+//display results on display

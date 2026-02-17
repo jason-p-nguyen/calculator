@@ -22,7 +22,25 @@ function divide(a, b) {
     return a / b
 }
 
-console.log(add(4, 5));
-console.log(subtract(5, 3));
-console.log(multiply(4, 9));
-console.log(divide(10, 2));
+function operate(num1, num2, operator) {
+    if (operator === "add") {
+        return add(num1, num2);
+    }
+    else if (operator === "subtract") {
+        return subtract(num1, num2);
+    }
+    else if (operator === "multiply") {
+        return multiply(num1, num2);
+    }
+    else if (operator === "divide") {
+        return divide(num1, num2);
+    }
+    else {
+        return "ERROR";
+    }
+}
+
+console.log(operate(4, 9, "add"));
+console.log(operate(4, 9, "subtract"));
+console.log(operate(4, 9, "multiply"));
+console.log(operate(4, 9, "divide"));

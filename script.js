@@ -39,12 +39,12 @@ function operate(num1, num2, operator) {
         return "ERROR";
     }
 }
-const button1 = document.getElementsByClassName("1");
 //set listener to button "1"
-button1.addEventListener("click", (event) => {
-    return 1;
-})
-
+const button = document.querySelectorAll("button");
+console.log(button)
+button.forEach(button => button.addEventListener("click", (event) => {
+    console.log(button.value);
+}) )
 //set num1 to "1"
 //test: output "num1 = 1" on the console log
 //set listener to button "+"

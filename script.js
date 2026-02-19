@@ -93,3 +93,5 @@ equal.addEventListener("click", (event) => {
     num2 = undefined;
     console.log(`num2: ${num2}`);
 });
+
+// BUG: Button can only do single values at a time. Does NOT do two or more digits.

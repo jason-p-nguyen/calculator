@@ -1,6 +1,7 @@
 let num1;
 let operator;
 let num2;
+let results;
 
 //add
 function add(a, b) {
@@ -24,16 +25,20 @@ function divide(a, b) {
 
 function operate(num1, num2, operator) {
     if (operator === "add") {
-        return add(num1, num2);
+        results = add(num1, num2);
+        console.log(`results: ${results}`)
     }
     else if (operator === "subtract") {
-        return subtract(num1, num2);
+        results = subtract(num1, num2);
+        console.log(`results: ${results}`)
     }
     else if (operator === "multiply") {
-        return multiply(num1, num2);
+        results = multiply(num1, num2);
+        console.log(`results: ${results}`)
     }
     else if (operator === "divide") {
-        return divide(num1, num2);
+        results = divide(num1, num2);
+        console.log(`results: ${results}`)
     }
     else {
         return "ERROR";
@@ -47,20 +52,25 @@ console.log(operator);
 //set listener to button "1"
 //set num1 to "1"
 //test: output "num1 = 1" on the console log
+//set num2 to "1"
+//test: output "num2 = 1" on console log
 const numbers = document.querySelectorAll(".number");
 console.log(numbers)
 numbers.forEach(number => number.addEventListener("click", (event) => {
     if (num1 === undefined) {
-        num1 = number.value;
+        num1 = parseInt(number.value);
         console.log(`num1: ${num1}`);
         return num1
     } else if (num2 === undefined) {
-        num2 = number.value;
+        num2 = parseInt(number.value);
         console.log(`num2: ${num2}`);
         return num2;
     }
 }));
 
+//set listener to button "+"
+//set operator to "+"
+//test: output "operator = +" on console log
 const maths = document.querySelectorAll(".maths");
 console.log(maths);
 maths.forEach(math => math.addEventListener("click", (event) => {
@@ -68,11 +78,11 @@ maths.forEach(math => math.addEventListener("click", (event) => {
     console.log(operator);
     return operator;
 }));
-//set listener to button "+"
-//set operator to "+"
-//test: output "operator = +" on console log
-//set num2 to "1"
-//test: output "num2 = 1" on console log
+
+const equal = document.querySelector(".equal");
+console.log(equal);
+equal.addEventListener("click", (event) => operate(num1, num2, operator));
+
 //set listener on "=" button to run operate()
 //test: output results on console log
 //display results on display

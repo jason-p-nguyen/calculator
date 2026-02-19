@@ -74,4 +74,9 @@ equal.addEventListener("click", (event) => {
     console.log(`num2: ${num2}`);
 });
 
+// Clear results when pushing clear button
+// Display snarky error message if user divides by 0
+// Show NaN as ERROR
+// BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
+
 // BUG: Button can only do single values at a time. Does NOT do two or more digits.

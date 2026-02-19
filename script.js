@@ -87,4 +87,7 @@ equal.addEventListener("click", (event) => {
     console.log(`results: ${results}`);
     display.textContent = results;
     num1 = results;
+    console.log(`num1: ${num1}`);
+    num2 = undefined;
+    console.log(`num2: ${num2}`);
 });

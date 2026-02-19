@@ -48,7 +48,7 @@ console.log(operator);
 //set num1 to "1"
 //test: output "num1 = 1" on the console log
 const numbers = document.querySelectorAll(".number");
-console.log(`numbers list: ${numbers}`)
+console.log(numbers)
 numbers.forEach(number => number.addEventListener("click", (event) => {
     if (num1 === undefined) {
         num1 = number.value;
@@ -61,6 +61,13 @@ numbers.forEach(number => number.addEventListener("click", (event) => {
     }
 }));
 
+const maths = document.querySelectorAll(".maths");
+console.log(maths);
+maths.forEach(math => math.addEventListener("click", (event) => {
+    operator = math.value;
+    console.log(operator);
+    return operator;
+}));
 //set listener to button "+"
 //set operator to "+"
 //test: output "operator = +" on console log

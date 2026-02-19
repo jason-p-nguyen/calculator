@@ -55,10 +55,12 @@ console.log(numbers)
 numbers.forEach(number => number.addEventListener("click", (event) => {
     if (num1 === undefined) {
         num1 = parseInt(number.value);
+        display.textContent = num1;
         console.log(`num1: ${num1}`);
         return num1
     } else if (num2 === undefined) {
         num2 = parseInt(number.value);
+        display.textContent = num2;
         console.log(`num2: ${num2}`);
         return num2;
     }

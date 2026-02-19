@@ -25,20 +25,16 @@ function divide(a, b) {
 
 function operate(num1, num2, operator) {
     if (operator === "add") {
-        results = add(num1, num2);
-        console.log(`results: ${results}`)
+        return add(num1, num2);
     }
     else if (operator === "subtract") {
-        results = subtract(num1, num2);
-        console.log(`results: ${results}`)
+        return subtract(num1, num2);
     }
     else if (operator === "multiply") {
-        results = multiply(num1, num2);
-        console.log(`results: ${results}`)
+        return multiply(num1, num2);
     }
     else if (operator === "divide") {
-        results = divide(num1, num2);
-        console.log(`results: ${results}`)
+        return divide(num1, num2);
     }
     else {
         return "ERROR";
@@ -87,6 +83,8 @@ console.log(equal);
 const display = document.querySelector("#display");
 console.log(display);
 equal.addEventListener("click", (event) => {
-    operate(num1, num2, operator)
+    results = operate(num1, num2, operator);
+    console.log(`results: ${results}`);
     display.textContent = results;
+    num1 = results;
 });

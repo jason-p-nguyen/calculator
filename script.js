@@ -79,10 +79,14 @@ maths.forEach(math => math.addEventListener("click", (event) => {
     return operator;
 }));
 
-const equal = document.querySelector(".equal");
-console.log(equal);
-equal.addEventListener("click", (event) => operate(num1, num2, operator));
-
 //set listener on "=" button to run operate()
 //test: output results on console log
 //display results on display
+const equal = document.querySelector(".equal");
+console.log(equal);
+const display = document.querySelector("#display");
+console.log(display);
+equal.addEventListener("click", (event) => {
+    operate(num1, num2, operator)
+    display.textContent = results;
+});

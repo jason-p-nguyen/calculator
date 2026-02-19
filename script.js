@@ -48,19 +48,18 @@ console.log(operator);
 //set num1 to "1"
 //test: output "num1 = 1" on the console log
 const numbers = document.querySelectorAll(".number");
-console.log(numbers)
+console.log(`numbers list: ${numbers}`)
 numbers.forEach(number => number.addEventListener("click", (event) => {
     if (num1 === undefined) {
         num1 = number.value;
-        console.log(num1);
+        console.log(`num1: ${num1}`);
         return num1
     } else if (num2 === undefined) {
         num2 = number.value;
-        console.log(num2);
+        console.log(`num2: ${num2}`);
         return num2;
     }
 }));
-
 
 //set listener to button "+"
 //set operator to "+"

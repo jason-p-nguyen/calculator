@@ -1,6 +1,7 @@
-let num1;
+let num1 = [];
+console.log(num1);
 let operator;
-let num2;
+let num2 = [];
 let results;
 
 function add(a, b) {
@@ -37,20 +38,48 @@ function operate(num1, num2, operator) {
     };
 };
 
+
+
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(number => number.addEventListener("click", (event) => {
-    if (num1 === undefined) {
-        num1 = parseInt(number.value);
-        display.textContent = num1;
+    //if num1 array is empty, add values to array
+        // this won't work, because we need to keep adding until an operator is selected
+    //else use num2 array
+    //ISSUE: how to call the correct array?
+        //do I create a function?
+        //
+    if (operator === undefined) {
+        //push value to array
+        num1.push(number.value);
         console.log(`num1: ${num1}`);
-        return num1
-    } else if (num2 === undefined) {
-        num2 = parseInt(number.value);
-        display.textContent = num2;
+        //concat values into array
+        let joinedNum1 = num1.join("");
+        console.log(`joinedNum1: ${joinedNum1}`);
+        //parse values into int
+        parseInt(joinedNum1);
+        console.log(typeof joinedNum1);
+        //display.textContent = num1
+        display.textContent = joinedNum1;
+        //this should be repeatable until an operator is selected
+    } else if (operator !== undefined) {
+        //push value to array
+        num2.push(number.value);
         console.log(`num2: ${num2}`);
-        return num2;
-    };
-}));
+        //concat values into array
+        let joinedNum2 = num2.join("");
+        console.log(`joinedNum2: ${joinedNum1}`);
+        //parse values into int
+        parseInt(joinedNum2);
+        console.log(`joinedNum2 type: ${typeof joinedNum2}`);
+        //display.textContent = num1
+        display.textContent = joinedNum2;
+        //this should be repeatable until an operator is selected
+
+    }
+));
+
+
+
 
 const maths = document.querySelectorAll(".maths");
 maths.forEach(math => math.addEventListener("click", (event) => {

@@ -77,7 +77,17 @@ equal.addEventListener("click", (event) => {
 });
 
 // Clear results when pushing clear button
-const clear = document.querySelector(".clear")
+const clear = document.querySelector(".clear");
+console.log(clear);
+clear.addEventListener("click", (event) => {
+    num1 = [];
+    num2 = [];
+    operator = undefined;
+    parsedNum1 = undefined;
+    parsedNum2 = undefined;
+    results = undefined;
+    display.textContent = 0;
+});
 
 // Display snarky error message if user divides by 0
 // Show NaN as ERROR

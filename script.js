@@ -72,12 +72,8 @@ equal.addEventListener("click", (event) => {
     results = operate(parsedNum1, parsedNum2, operator);
     console.log(`results: ${results}`);
     display.textContent = results;
-    // BUG: additional numbers after the results are pushed into the num1 array, 
-        // instead of being added to num2.
-    // parsedNum1 = results;
-    // console.log(`num1: ${parsedNum1}`);
-    // parsedNum2 = undefined;
-    // console.log(`num2: ${parsedNum1}`);
+    parsedNum1 = results;
+    num2 = [];
 });
 
 // Clear results when pushing clear button

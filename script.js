@@ -83,13 +83,5 @@ const clear = document.querySelector(".clear")
 // Show NaN as ERROR
 // BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
 
-// BUG: Button can only do single values at a time. Does NOT do two or more digits.
-    //1. Set num1 as arrays. 
-        // The assumption is that it will allow to display the number is you join them. e.g. press 1, press 2 = 12.
-        // Additionally, this would allow for a 'backspace' function, that would pop the last number input.
-    //2. Concatenate into a number and update display as an number.
-    //3. Allow numbers to be kept being input until the number hits edge of the display box OR an operator is added.
-    //4. Repeat the process above for num2.
-
 // Add color change when math operator is hit.
     // remove color change when equals is hit.

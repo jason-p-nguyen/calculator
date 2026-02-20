@@ -42,43 +42,25 @@ function operate(num1, num2, operator) {
 
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(number => number.addEventListener("click", (event) => {
-    //if num1 array is empty, add values to array
-        // this won't work, because we need to keep adding until an operator is selected
-    //else use num2 array
-    //ISSUE: how to call the correct array?
-        //do I create a function?
-        //
     if (operator === undefined) {
-        //push value to array
         num1.push(number.value);
-        console.log(`num1: ${num1}`);
-        //concat values into array
         let joinedNum1 = num1.join("");
-        console.log(`joinedNum1: ${joinedNum1}`);
-        //parse values into int
-        parseInt(joinedNum1);
-        console.log(typeof joinedNum1);
-        //display.textContent = num1
+        joinedNum1 = parseInt(joinedNum1);
         display.textContent = joinedNum1;
-        //this should be repeatable until an operator is selected
+        console.log(joinedNum1, typeof joinedNum1);
+        return parseInt(joinedNum1);
+
     } else if (operator !== undefined) {
-        //push value to array
         num2.push(number.value);
-        console.log(`num2: ${num2}`);
-        //concat values into array
         let joinedNum2 = num2.join("");
-        console.log(`joinedNum2: ${joinedNum1}`);
-        //parse values into int
-        parseInt(joinedNum2);
-        console.log(`joinedNum2 type: ${typeof joinedNum2}`);
-        //display.textContent = num1
+        joinedNum2 = parseInt(joinedNum2);
         display.textContent = joinedNum2;
-        //this should be repeatable until an operator is selected
-
-    }
-));
-
-
+        console.log(joinedNum2, typeof joinedNum2);
+        return parseInt(joinedNum2);
+    } else {
+        display.textContent = "ERROR";
+    };
+}));
 
 
 const maths = document.querySelectorAll(".maths");
@@ -88,9 +70,6 @@ maths.forEach(math => math.addEventListener("click", (event) => {
     return operator;
 }));
 
-//set listener on "=" button to run operate()
-//test: output results on console log
-//display results on display
 const equal = document.querySelector(".equal");
 const display = document.querySelector("#display");
 equal.addEventListener("click", (event) => {

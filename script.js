@@ -42,12 +42,18 @@ function operate(num1, num2, operator) {
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(number => number.addEventListener("click", (event) => {
     if (operator === undefined) {
+            if (num1[0] === "0") {
+                num1.shift();
+            };
         num1.push(number.value);
         let joinedNum1 = num1.join("");
         display.textContent = joinedNum1;
         return parsedNum1 = parseInt(joinedNum1);
 
     } else if (operator !== undefined) {
+            if (num2[0] === "0") {
+                num2.shift();
+            };
         num2.push(number.value);
         let joinedNum2 = num2.join("");
         display.textContent = joinedNum2;
@@ -104,7 +110,7 @@ backspace.addEventListener("click", (event) => {
     }
 });
 
-// Display snarky error message if user divides by 0
+// Set Display textcontent as 0
 // Show NaN as ERROR
 // BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
 // round answers with long decimals so that they don’t overflow the display

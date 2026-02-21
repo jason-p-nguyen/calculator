@@ -130,9 +130,3 @@ backspace.addEventListener("click", (event) => {
         return parsedNum2 = parseInt(joinedNum2);
     }
 });
-
-// Show NaN as ERROR
-// BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
-// round answers with long decimals so that they don’t overflow the display
-// Add color change when math operator is hit.Remove color change when equals is hit.
-// Add ability to add decimal point. Make sure they can only add one. Make sure it is disabled if there is already one.

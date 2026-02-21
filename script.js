@@ -98,19 +98,26 @@ const backspace = document.querySelector(".backspace");
 backspace.addEventListener("click", (event) => {
     if (operator === undefined) {
         num1.pop();
+            // Prevents display from showing no numbers
+            if (num1.length < 1 || num1 === undefined) {
+                num1.push("0");
+            };
         let joinedNum1 = num1.join("");
         display.textContent = joinedNum1;
         return parsedNum1 = parseInt(joinedNum1);
     } 
     else if (operator !== undefined) {
         num2.pop();
+            // Prevents display from showing no numbers
+            if (num2.length < 1 || num2 === undefined) {
+                    num2.push("0");
+                };
         let joinedNum2 = num2.join("");
         display.textContent = joinedNum2;
         return parsedNum2 = parseInt(joinedNum2);
     }
 });
 
-// Set Display textcontent as 0
 // Show NaN as ERROR
 // BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
 // round answers with long decimals so that they don’t overflow the display

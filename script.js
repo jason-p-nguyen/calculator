@@ -72,16 +72,21 @@ maths.forEach(math => math.addEventListener("click", (event) => {
 const equal = document.querySelector(".equal");
 const display = document.querySelector("#display");
 equal.addEventListener("click", (event) => {
-    if (operator === divide && parsedNum1 === 0 || parsedNum2 === 0) {
+    if (operator === "divide" && parsedNum1 === 0 || operator === "divide" && parsedNum2 === 0) {
         alert("Sorry. This calculator can't divide by zero.")
         display.textContent = "ERROR 404";
+        num1 = [];
+        num2 = [];
+        operator = undefined;
+        parsedNum1 = undefined;
+        parsedNum2 = undefined;
     } else {
         results = operate(parsedNum1, parsedNum2, operator);
         display.textContent = results;
         parsedNum1 = results;
         num2 = [];
-    };
-});
+            };
+    });
 
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", (event) => {

@@ -82,6 +82,7 @@ equal.addEventListener("click", (event) => {
         parsedNum2 = undefined;
     } 
     else if (parsedNum1 === undefined || parsedNum2 === undefined) { 
+        //Displays error if NaN result found
         display.textContent = "OMG ERROR";
         num1 = [];
         parsedNum1 = undefined;

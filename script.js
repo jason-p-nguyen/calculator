@@ -45,14 +45,12 @@ numbers.forEach(number => number.addEventListener("click", (event) => {
         num1.push(number.value);
         let joinedNum1 = num1.join("");
         display.textContent = joinedNum1;
-        console.log(joinedNum1, typeof joinedNum1);
         return parsedNum1 = parseInt(joinedNum1);
 
     } else if (operator !== undefined) {
         num2.push(number.value);
         let joinedNum2 = num2.join("");
         display.textContent = joinedNum2;
-        console.log(joinedNum2, typeof joinedNum2);
         return parsedNum2 = parseInt(joinedNum2);
     } else {
         display.textContent = "ERROR";
@@ -62,7 +60,6 @@ numbers.forEach(number => number.addEventListener("click", (event) => {
 const maths = document.querySelectorAll(".maths");
 maths.forEach(math => math.addEventListener("click", (event) => {
     operator = math.value;
-    console.log(operator);
     return operator;
 }));
 
@@ -70,7 +67,6 @@ const equal = document.querySelector(".equal");
 const display = document.querySelector("#display");
 equal.addEventListener("click", (event) => {
     results = operate(parsedNum1, parsedNum2, operator);
-    console.log(`results: ${results}`);
     display.textContent = results;
     parsedNum1 = results;
     num2 = [];
@@ -92,25 +88,18 @@ clear.addEventListener("click", (event) => {
 const backspace = document.querySelector(".backspace");
 backspace.addEventListener("click", (event) => {
     if (operator === undefined) {
-        console.log(num1);
         num1.pop();
-        console.log(num1);
         let joinedNum1 = num1.join("");
         display.textContent = joinedNum1;
-        console.log(joinedNum1, typeof joinedNum1);
         return parsedNum1 = parseInt(joinedNum1);
     } 
     else if (operator !== undefined) {
-        console.log(num2);
         num2.pop();
-        console.log(num2);
         let joinedNum2 = num2.join("");
         display.textContent = joinedNum2;
-        console.log(joinedNum2, typeof joinedNum2);
         return parsedNum2 = parseInt(joinedNum2);
     }
 });
-
 
 // Display snarky error message if user divides by 0
 // Show NaN as ERROR

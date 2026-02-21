@@ -66,13 +66,17 @@ maths.forEach(math => math.addEventListener("click", (event) => {
 const equal = document.querySelector(".equal");
 const display = document.querySelector("#display");
 equal.addEventListener("click", (event) => {
-    results = operate(parsedNum1, parsedNum2, operator);
-    display.textContent = results;
-    parsedNum1 = results;
-    num2 = [];
+    if (operator === divide && parsedNum1 === 0 || parsedNum2 === 0) {
+        alert("Sorry. This calculator can't divide by zero.")
+        display.textContent = "ERROR 404";
+    } else {
+        results = operate(parsedNum1, parsedNum2, operator);
+        display.textContent = results;
+        parsedNum1 = results;
+        num2 = [];
+    };
 });
 
-// Clear results when pushing clear button
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", (event) => {
     num1 = [];
@@ -84,7 +88,6 @@ clear.addEventListener("click", (event) => {
     display.textContent = 0;
 });
 
-// Set backspace to pop end value from array
 const backspace = document.querySelector(".backspace");
 backspace.addEventListener("click", (event) => {
     if (operator === undefined) {

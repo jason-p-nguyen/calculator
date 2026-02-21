@@ -80,7 +80,14 @@ equal.addEventListener("click", (event) => {
         operator = undefined;
         parsedNum1 = undefined;
         parsedNum2 = undefined;
-    } else {
+    } 
+    else if (parsedNum1 === undefined || parsedNum2 === undefined) { 
+        display.textContent = "OMG ERROR";
+        num1 = [];
+        parsedNum1 = undefined;
+        operator = undefined;
+    } 
+    else {
         results = operate(parsedNum1, parsedNum2, operator);
         display.textContent = results;
         parsedNum1 = results;

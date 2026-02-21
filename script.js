@@ -78,7 +78,6 @@ equal.addEventListener("click", (event) => {
 
 // Clear results when pushing clear button
 const clear = document.querySelector(".clear");
-console.log(clear);
 clear.addEventListener("click", (event) => {
     num1 = [];
     num2 = [];
@@ -89,9 +88,33 @@ clear.addEventListener("click", (event) => {
     display.textContent = 0;
 });
 
+// Set backspace to pop end value from array
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener("click", (event) => {
+    if (operator === undefined) {
+        console.log(num1);
+        num1.pop();
+        console.log(num1);
+        let joinedNum1 = num1.join("");
+        display.textContent = joinedNum1;
+        console.log(joinedNum1, typeof joinedNum1);
+        return parsedNum1 = parseInt(joinedNum1);
+    } 
+    else if (operator !== undefined) {
+        console.log(num2);
+        num2.pop();
+        console.log(num2);
+        let joinedNum2 = num2.join("");
+        display.textContent = joinedNum2;
+        console.log(joinedNum2, typeof joinedNum2);
+        return parsedNum2 = parseInt(joinedNum2);
+    }
+});
+
+
 // Display snarky error message if user divides by 0
 // Show NaN as ERROR
 // BUG: Pressing = before entering all the numbers or an operator causes an ERROR.
-
-// Add color change when math operator is hit.
-    // remove color change when equals is hit.
+// round answers with long decimals so that they don’t overflow the display
+// Add color change when math operator is hit.Remove color change when equals is hit.
+// Add ability to add decimal point. Make sure they can only add one. Make sure it is disabled if there is already one.
